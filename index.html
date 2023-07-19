@@ -16,323 +16,243 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <!-- Font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="content">
-        <h1>TÍNH TIỀN LƯƠNG NHÂN VIÊN</h1>
-        <p>Lương 1 ngày: 100,000đ</p>
-        <div class="form-group">
-          <label for="">Nhập số ngày làm</label>
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            placeholder="Số ngày làm"
-          />
+    <div class="container mt-5">
+      <div class="calc_box p-5">
+        <!-- NAV -->
+        <ul
+          class="nav nav-pills mb-3 d-flex justify-content-center"
+          id="pills-tab"
+          role="tablist"
+        >
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              id="pills-bai1-tab"
+              data-toggle="pill"
+              href="#pills-bai1"
+              role="tab"
+              aria-controls="pills-bai1"
+              aria-selected="true"
+              >BÀI 1</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="pills-bai2-tab"
+              data-toggle="pill"
+              href="#pills-bai2"
+              role="tab"
+              aria-controls="pills-bai2"
+              aria-selected="false"
+              >BÀI 2</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="pills-bai3-tab"
+              data-toggle="pill"
+              href="#pills-bai3"
+              role="tab"
+              aria-controls="pills-bai3"
+              aria-selected="false"
+              >BÀI 3</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="pills-bai4-tab"
+              data-toggle="pill"
+              href="#pills-bai4"
+              role="tab"
+              aria-controls="pills-bai4"
+              aria-selected="false"
+              >BÀI 4</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="pills-bai5-tab"
+              data-toggle="pill"
+              href="#pills-bai5"
+              role="tab"
+              aria-controls="pills-bai5"
+              aria-selected="false"
+              >BÀI 5</a
+            >
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="pills-bai1"
+            role="tabpanel"
+            aria-labelledby="pills-bai1-tab"
+          >
+            <div class="content">
+              <h1>TÍNH TIỀN LƯƠNG NHÂN VIÊN</h1>
+              <p>Lương 1 ngày: 100,000đ</p>
+              <div class="form-group">
+                <label for="">Nhập số ngày làm:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="ngay-cong"
+                  placeholder="Số ngày làm"
+                />
+              </div>
+              <button onclick="tinhluong()" class="btn btn-success">
+                Tính lương
+              </button>
+              <h2 class="mt-5" id="tienluong"></h2>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="pills-bai2"
+            role="tabpanel"
+            aria-labelledby="pills-bai2-tab"
+          >
+            <div class="content">
+              <h1>TÍNH GIÁ TRỊ TRUNG BÌNH</h1>
+              <p>Giá trị trung bình của 5 số thực</p>
+              <div class="form-group">
+                <label for="">Nhập 5 số thực:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="so1"
+                  placeholder="Số thứ nhất"
+                />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="so2"
+                  placeholder="Số thứ hai"
+                />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="so3"
+                  placeholder="Số thứ ba"
+                />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="so4"
+                  placeholder="Số thứ tư"
+                />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="so5"
+                  placeholder="Số thứ năm"
+                />
+              </div>
+              <button onclick="trungbinh()" class="btn btn-success">
+                Tính trung bình
+              </button>
+              <h2 class="mt-5" id="trungbinh"></h2>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="pills-bai3"
+            role="tabpanel"
+            aria-labelledby="pills-bai3-tab"
+          >
+            <div class="content">
+              <h1>QUY ĐỔI TIỀN</h1>
+              <p>Quy đổi USA sang VNĐ với tỷ giá 23.500đ</p>
+              <div class="form-group">
+                <label for="">Nhập số tiền USD:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="usd"
+                  placeholder="Số tiền USD"
+                />
+              </div>
+              <button onclick="quydoi()" class="btn btn-success">
+                Quy đổi
+              </button>
+              <h2 class="mt-5" id="quydoi"></h2>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="pills-bai4"
+            role="tabpanel"
+            aria-labelledby="pills-bai4-tab"
+          >
+            <div class="content">
+              <h1>TÍNH DIỆN TÍCH VÀ CHU VI HÌNH CHỮ NHẬT</h1>
+              <div class="form-group">
+                <label for="">Nhập kích thước 2 cạnh:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="canh1"
+                  placeholder="Nhập chiều dài"
+                />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="canh2"
+                  placeholder="Nhập chiều rộng"
+                />
+              </div>
+              <button onclick="cvdt()" class="btn btn-success">Tính</button>
+              <h2 class="mt-5" id="cvdt"></h2>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="pills-bai5"
+            role="tabpanel"
+            aria-labelledby="pills-bai5-tab"
+          >
+            <div class="content">
+              <h1>TÍNH TỔNG 2 KÝ SỐ</h1>
+              <p>Tổng 2 ký số của 1 số gồm 2 chữ số</p>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="socantinh"
+                  placeholder="Nhập số có 2 chữ số"
+                />
+              </div>
+              <button onclick="tongkyso()" class="btn btn-success">
+                Tính tổng
+              </button>
+              <h2 class="mt-5" id="tongkyso"></h2>
+            </div>
+          </div>
         </div>
-        <button>Tính lương</button>
-        <h1></h1>
-      </div>
-      <div class="content">
-        <h1>TÍNH GIÁ TRỊ TRUNG BÌNH</h1>
-        <p>Giá trị trung bình của 5 số thực</p>
-        <div class="form-group">
-          <label for="">Nhập 5 số thưc</label>
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            placeholder="Số thứ nhất"
-          />
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            placeholder="Số thứ hai"
-          />
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            placeholder="Số thứ ba"
-          />
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            placeholder="Số thứ tư"
-          />
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            placeholder="Số thứ năm"
-          />
-        </div>
-        <button>Tính trung bình</button>
-        <h1></h1>
-      </div>
-      <div class="content">
-        <h1>QUY ĐỔI TIỀN</h1>
-        <p>Quy đổi USA sang VNĐ với tỷ giá 23.500đ</p>
-        <div class="form-group">
-          <label for="">Nhập số tiền USD</label>
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            placeholder="Số tiền USD"
-          />
-        </div>
-        <button>Quy đổi</button>
-        <h1></h1>
-      </div>
-      <div class="content">
-        <h1>TÍNH DIỆN TÍCH VÀ CHU VI HÌNH CHỮ NHẬT</h1>
-        <div class="form-group">
-          <label for="">Nhập kích thước 2 cạnh</label>
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            placeholder="Nhập chiều dài"
-          />
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            placeholder="Nhập chiều rộng"
-          />
-        </div>
-        <button>Tính</button>
-        <h1></h1>
-      </div>
-      <div class="content">
-        <h1>TÍNH TỔNG 2 KÝ SỐ</h1>
-        <p>Tổng 2 ký số của 1 số gồm 2 chữ số</p>
-        <div class="form-group">
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            placeholder="Nhập số có 2 chữ số"
-          />
-        </div>
-        <button>Tính tổng</button>
-        <h1></h1>
       </div>
     </div>
 
-    <!-- NAV -->
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-      <li class="nav-item">
-        <a
-          class="nav-link active"
-          id="pills-bai1-tab"
-          data-toggle="pill"
-          href="#pills-bai1"
-          role="tab"
-          aria-controls="pills-bai1"
-          aria-selected="true"
-          >BÀI 1</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          id="pills-bai2-tab"
-          data-toggle="pill"
-          href="#pills-bai2"
-          role="tab"
-          aria-controls="pills-bai2"
-          aria-selected="false"
-          >BÀI 2</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          id="pills-bai3-tab"
-          data-toggle="pill"
-          href="#pills-bai3"
-          role="tab"
-          aria-controls="pills-bai3"
-          aria-selected="false"
-          >BÀI 3</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          id="pills-bai4-tab"
-          data-toggle="pill"
-          href="#pills-bai4"
-          role="tab"
-          aria-controls="pills-bai4"
-          aria-selected="false"
-          >BÀI 4</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          id="pills-bai5-tab"
-          data-toggle="pill"
-          href="#pills-bai5"
-          role="tab"
-          aria-controls="pills-bai5"
-          aria-selected="false"
-          >BÀI 5</a
-        >
-      </li>
-    </ul>
-    <div class="tab-content" id="pills-tabContent">
-      <div
-        class="tab-pane fade show active"
-        id="pills-bai1"
-        role="tabpanel"
-        aria-labelledby="pills-bai1-tab"
-      >
-        <div class="content">
-          <h1>TÍNH TIỀN LƯƠNG NHÂN VIÊN</h1>
-          <p>Lương 1 ngày: 100,000đ</p>
-          <div class="form-group">
-            <label for="">Nhập số ngày làm</label>
-            <input
-              type="text"
-              class="form-control"
-              id="ngay-cong"
-              placeholder="Số ngày làm"
-            />
-          </div>
-          <button onclick="tinhluong()" class="btn btn-success">
-            Tính lương
-          </button>
-          <h1 class="tienluong"></h1>
-        </div>
-      </div>
-      <div
-        class="tab-pane fade"
-        id="pills-bai2"
-        role="tabpanel"
-        aria-labelledby="pills-bai2-tab"
-      >
-        <div class="content">
-          <h1>TÍNH GIÁ TRỊ TRUNG BÌNH</h1>
-          <p>Giá trị trung bình của 5 số thực</p>
-          <div class="form-group">
-            <label for="">Nhập 5 số thưc</label>
-            <input
-              type="text"
-              class="form-control"
-              id="so1"
-              placeholder="Số thứ nhất"
-            />
-            <input
-              type="text"
-              class="form-control"
-              id="so2"
-              placeholder="Số thứ hai"
-            />
-            <input
-              type="text"
-              class="form-control"
-              id="so3"
-              placeholder="Số thứ ba"
-            />
-            <input
-              type="text"
-              class="form-control"
-              id="so4"
-              placeholder="Số thứ tư"
-            />
-            <input
-              type="text"
-              class="form-control"
-              id="so5"
-              placeholder="Số thứ năm"
-            />
-          </div>
-          <button onclick="trungbinh()" class="btn btn-success">
-            Tính trung bình
-          </button>
-          <h1></h1>
-        </div>
-      </div>
-      <div
-        class="tab-pane fade"
-        id="pills-bai3"
-        role="tabpanel"
-        aria-labelledby="pills-bai3-tab"
-      >
-        <div class="content">
-          <h1>QUY ĐỔI TIỀN</h1>
-          <p>Quy đổi USA sang VNĐ với tỷ giá 23.500đ</p>
-          <div class="form-group">
-            <label for="">Nhập số tiền USD</label>
-            <input
-              type="text"
-              class="form-control"
-              id="usd"
-              placeholder="Số tiền USD"
-            />
-          </div>
-          <button onclick="quydoi()" class="btn btn-success">Quy đổi</button>
-          <h1></h1>
-        </div>
-      </div>
-      <div
-        class="tab-pane fade"
-        id="pills-bai4"
-        role="tabpanel"
-        aria-labelledby="pills-bai4-tab"
-      >
-        <div class="content">
-          <h1>TÍNH DIỆN TÍCH VÀ CHU VI HÌNH CHỮ NHẬT</h1>
-          <div class="form-group">
-            <label for="">Nhập kích thước 2 cạnh</label>
-            <input
-              type="text"
-              class="form-control"
-              id="canh1"
-              placeholder="Nhập chiều dài"
-            />
-            <input
-              type="text"
-              class="form-control"
-              id="canh2"
-              placeholder="Nhập chiều rộng"
-            />
-          </div>
-          <button onclick="cvdt()" class="btn btn-success">Tính</button>
-          <h1></h1>
-        </div>
-      </div>
-      <div
-        class="tab-pane fade"
-        id="pills-bai5"
-        role="tabpanel"
-        aria-labelledby="pills-bai5-tab"
-      >
-        <div class="content">
-          <h1>TÍNH TỔNG 2 KÝ SỐ</h1>
-          <p>Tổng 2 ký số của 1 số gồm 2 chữ số</p>
-          <div class="form-group">
-            <input
-              type="text"
-              class="form-control"
-              id="socantinh"
-              placeholder="Nhập số có 2 chữ số"
-            />
-          </div>
-          <button onclick="tongkyso()" class="btn btn-success">
-            Tính tổng
-          </button>
-          <h1></h1>
-        </div>
-      </div>
-    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script

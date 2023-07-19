@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+body {
+    background: linear-gradient(to right, #d3cce3, #e9e4f0);
+}
+.calc_box {
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+    background-size: 200%;
+}
+.content {
+    padding: 50px;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+}
+.nav li {
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+.nav-link {
+    font-size: 20px;
+    padding: 10px 30px;
+}
+.nav-pills .nav-link.active {
+    color: rgb(204, 162, 123);
+    background: linear-gradient(to right, #a8ff78, #78ffd6);
+}
+.tab-content {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+h1 {
+    font-family: 'Kanit', sans-serif;
+    text-align: center;
+    color: #020b5c;
+}
+.form-group input {
+    width: 50%;
+    margin-top: 10px;
+}
